@@ -4,11 +4,12 @@ on:
   pull_request:
     branches:
       - master
+    paths:
+      - '**.md'
 
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -17,18 +18,21 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
+
     - name: Install Requirements
       run: |
         python -m pip install --upgrade pip
         pip install pylint
+
     - name: Paths Changes Filter
-    - uses: dorny/paths-filter@v2.5.1
+      uses: dorny/paths-filter@v2.5.1
       id: filter
       filter:
       Python:
         - 'Python/**'
+
     - name: Detect Files
-    - uses: dorny/paths-filter@v2
+      uses: dorny/paths-filter@v2
       id: filter
       with:
         # Enable listing of files matching each filter.
