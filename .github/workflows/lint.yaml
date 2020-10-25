@@ -22,6 +22,29 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pylint
-    - name: Run Pylint
-      run: |
-        python pyLint.py --path ./src --threshold 1.5
+    - name: Paths Changes Filter
+    - uses: dorny/paths-filter@v2.5.1
+      id: filter
+        filter: |
+          Python:
+            - 'Python/**'
+    - name: Detect Files
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        # Enable listing of files matching each filter.
+        # Paths to files will be available in `${FILTER_NAME}_files` output variable.
+        # Paths will be escaped and space-delimited.
+        # Output is usable as command line argument list in linux shell
+        list-files: shell
+
+        # In this example changed files will be checked by linter.
+        # It doesn't make sense to lint deleted files.
+        # Therefore we specify we are only interested in added or modified files.
+        filters: |
+          markdown:
+            - added|modified: '*.md'
+    - name: PyLint Markdown
+      if: ${{ steps.filter.outputs.markdown == 'true' }}
+      run: python pyLint.py --path ${{ steps.filter.outputs.markdown_files }} --threshold 1.5
+
