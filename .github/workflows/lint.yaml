@@ -24,9 +24,9 @@ jobs:
     - name: Paths Changes Filter
     - uses: dorny/paths-filter@v2.5.1
       id: filter
-        filter: |
-        Python:
-          - 'Python/**'
+      filter:
+      Python:
+        - 'Python/**'
     - name: Detect Files
     - uses: dorny/paths-filter@v2
       id: filter
