@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""Basic PyLint Code
+"""
+# -*- encoding: utf-8 -*-
 import argparse
 import logging
 from pylint.lint import Run
