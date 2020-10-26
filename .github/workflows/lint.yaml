@@ -58,5 +58,11 @@ jobs:
     - name: Run lint check
       env:
         FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
-      run: python pyLint.py --path $FILES --threshold 1.5
+      run: |
+        echo "The Following files were changed or created:"
+        echo $FILES
+        for FILE in $FILES
+        do
+          python pyLint.py --path FILE --threshold 1.5
+        done
 
