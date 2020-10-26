@@ -26,8 +26,9 @@ jobs:
 
     - name: Paths Changes Filter
       uses: dorny/paths-filter@v2.5.1
-      id: filter
-      filter:
+      id: changes
+      with:
+        filters: |
         Python:
           - '**.py'
 
@@ -45,8 +46,10 @@ jobs:
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
         filters: |
-          python:
-            - added|modified: '*.py'
+        Python:
+          - added|modified: '**.py'
+
+
     - name: PyLint Python
       if: ${{ steps.filter.outputs.python == 'true' }}
       run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 1.5
