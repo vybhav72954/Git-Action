@@ -46,7 +46,7 @@ jobs:
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
         filters: |
-        Python:
+        python:
           - added|modified: '**.py'
 
 
