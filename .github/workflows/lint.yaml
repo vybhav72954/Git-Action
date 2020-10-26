@@ -25,13 +25,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
 
-   # - name: Paths Changes Filter
-   #   uses: dorny/paths-filter@v2.5.1
-   #   id: changes
-   #   with:
-   #     filters: |
-   #     python: path
-   #       - '**/**.py'
+    - name: Paths Changes Filter
+      uses: dorny/paths-filter@v2.5.1
+      id: changes
+      with:
+        filters: |
+          python: path
+            - '**/**.py'
 
     - name: Detect Files
       uses: dorny/paths-filter@v2
@@ -51,12 +51,12 @@ jobs:
             - added|modified: '**.py'
 
 
-    #- name: PyLint Python
-    #  if: ${{ steps.filter.outputs.python == 'true' }}
-    #  run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 1.5
+    - name: PyLint Python
+      if: ${{ steps.filter.outputs.python == 'true' }}
+      run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 1.5
 
-    - name: Run lint check
-      env:
-        FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
-      run: python pyLint.py --path $FILE --threshold 1.5
+    #- name: Run lint check
+    #  env:
+    #    FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
+    #  run: python pyLint.py --path $FILES --threshold 1.5
 
