@@ -25,13 +25,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
 
-    - name: Paths Changes Filter
-      uses: dorny/paths-filter@v2.5.1
-      id: changes
-      with:
-        filters: |
-        Python:
-          - '**/**.py'
+    #- name: Paths Changes Filter
+     # uses: dorny/paths-filter@v2.5.1
+     # id: changes
+     # with:
+     #   filters: |
+     #   python: 
+     #   - '**/**.py'
 
     #- name: Detect Files
     #  uses: dorny/paths-filter@v2
