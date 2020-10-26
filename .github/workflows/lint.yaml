@@ -2,10 +2,15 @@ name: PyLint Runner
 
 on:
   pull_request:
-    branches:
+    branches: 
       - master
+      - another
+      - again
+    
     paths:
+      - 'Python/**.py'
       - '**/**.py'
+    paths-ignore:
       - '!.github/**'
 
 
