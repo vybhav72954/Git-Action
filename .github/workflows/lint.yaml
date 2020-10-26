@@ -55,8 +55,8 @@ jobs:
       if: ${{ steps.filter.outputs.python == 'true' }}
       run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 1.5
 
-    #- name: Run lint check
-    #  env:
-    #    FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
-    #  run: python pyLint.py --path $FILES --threshold 1.5
+    - name: Run lint check
+      env:
+        FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
+      run: python pyLint.py --path $FILES --threshold 1.5
 
