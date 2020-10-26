@@ -30,7 +30,7 @@ jobs:
       id: changes
       with:
         filters: |
-          python: path
+          Python: path
             - '**/**.py'
 
     - name: Detect Files
@@ -47,13 +47,13 @@ jobs:
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
         filters: |
-          addedOrmodfified:
+          python:
             - added|modified: '**.py'
 
 
     - name: PyLint Python
       if: ${{ steps.filter.outputs.python == 'true' }}
-      run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 1.5
+      run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 10
 
     - name: Run lint check
       env:
@@ -61,8 +61,5 @@ jobs:
       run: |
         echo "The Following files were changed or created:"
         echo $FILES
-        for FILE in $FILES
-        do
-          python pyLint.py --path FILE --threshold 1.5
-        done
+        for FILE in $FILES; do python pyLint.py --path FILE --threshold 10; done
 
