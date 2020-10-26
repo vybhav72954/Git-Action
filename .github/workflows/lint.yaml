@@ -25,30 +25,30 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
 
-    - name: Paths Changes Filter
-      uses: dorny/paths-filter@v2.5.1
-      id: changes
-      with:
-        filters: |
-        python: path
-          - '**/**.py'
+   # - name: Paths Changes Filter
+   #   uses: dorny/paths-filter@v2.5.1
+   #   id: changes
+   #   with:
+   #     filters: |
+   #     python: path
+   #       - '**/**.py'
 
-    #- name: Detect Files
-    #  uses: dorny/paths-filter@v2
-    #  id: filter
-    #  with:
+    - name: Detect Files
+      uses: dorny/paths-filter@v2
+      id: filter
+      with:
         # Enable listing of files matching each filter.
         # Paths to files will be available in `${FILTER_NAME}_files` output variable.
         # Paths will be escaped and space-delimited.
         # Output is usable as command line argument list in linux shell
-     #   list-files: shell
+        list-files: shell
 
         # In this example changed files will be checked by linter.
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
-      #  filters: |
-       # Python:
-        #  - added|modified: '**.py'
+        filters: |
+          addedOrmodfified:
+            - added|modified: '**.py'
 
 
     #- name: PyLint Python
