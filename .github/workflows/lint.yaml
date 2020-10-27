@@ -1,12 +1,18 @@
+# .github/workflows/lint.yaml
+
 name: PyLint Runner
 
-on:
-  pull_request:
-    branches:
-      - master
-    paths:
-      - '**/**.py'
-      - '!.github/**'
+on: [pull_request]
+#  pull_request:
+#    branches: 
+#      - master
+#      - another
+#      - again
+    
+#    paths:
+#      - 'Python/**.py'
+#      - '**/**.py'
+#      - '!.github/**'
 
 
 jobs:
@@ -30,33 +36,36 @@ jobs:
       id: changes
       with:
         filters: |
-        Python:
-          - '**/**.py'
+          Python: path
+            - '**/**.py'
 
-    #- name: Detect Files
-    #  uses: dorny/paths-filter@v2
-    #  id: filter
-    #  with:
+    - name: Detect Files
+      uses: dorny/paths-filter@v2
+      id: filter
+      with:
         # Enable listing of files matching each filter.
         # Paths to files will be available in `${FILTER_NAME}_files` output variable.
         # Paths will be escaped and space-delimited.
         # Output is usable as command line argument list in linux shell
-     #   list-files: shell
+        list-files: shell
 
         # In this example changed files will be checked by linter.
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
-      #  filters: |
-       # Python:
-        #  - added|modified: '**.py'
+        filters: |
+          python:
+            - added|modified: '**.py'
 
 
-    #- name: PyLint Python
-    #  if: ${{ steps.filter.outputs.python == 'true' }}
-    #  run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 1.5
+    - name: PyLint Python
+      if: ${{ steps.filter.outputs.python == 'true' }}
+      run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 10
 
     - name: Run lint check
       env:
         FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
-      run: python pyLint.py --path $FILE --threshold 1.5
+      run: |
+        echo "The Following files were changed or created:"
+        echo $FILES
+        for FILE in $FILES; do python pyLint.py --path FILE --threshold 10; done
 
