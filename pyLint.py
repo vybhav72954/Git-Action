@@ -16,7 +16,7 @@ parser.add_argument('-p',
                     help='path to directory you want to run pylint | '
                          'Default: %(default)s | '
                          'Type: %(type)s ',
-                    default='./Python/add.py',
+                    default='/Python',
                     nargs='+',
                     type=str)
 
