@@ -73,6 +73,7 @@ jobs:
     #  run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 10
 
     - name: Run lint check
+      continue-on-error: true
       env:
         FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
       run: |
