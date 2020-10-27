@@ -57,9 +57,9 @@ jobs:
             - added|modified: '**.py'
 
 
-    - name: PyLint Python
-      if: ${{ steps.filter.outputs.python == 'true' }}
-      run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 10
+    #- name: PyLint Python
+    #  if: ${{ steps.filter.outputs.python == 'true' }}
+    #  run: python pyLint.py --path ${{ steps.filter.outputs.python_files }} --threshold 10
 
     - name: Run lint check
       env:
