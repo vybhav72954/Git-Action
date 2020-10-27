@@ -9,14 +9,15 @@ from pylint.lint import Run
 
 logging.getLogger().setLevel(logging.INFO)
 
-parser = argparse.ArgumentParser(prog="LINT")
+parser = argparse.ArgumentParser(prog="pyLint")
 
 parser.add_argument('-p',
                     '--path',
                     help='path to directory you want to run pylint | '
                          'Default: %(default)s | '
                          'Type: %(type)s ',
-                    default='./src',
+                    default='./Python/add.py',
+                    nargs='+',
                     type=str)
 
 parser.add_argument('-t',
@@ -24,7 +25,7 @@ parser.add_argument('-t',
                     help='score threshold to fail pylint runner | '
                          'Default: %(default)s | '
                          'Type: %(type)s ',
-                    default=7,
+                    default=2,
                     type=float)
 
 args = parser.parse_args()
