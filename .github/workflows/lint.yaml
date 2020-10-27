@@ -76,7 +76,8 @@ jobs:
       env:
         FILES: '${{ steps.files.outputs.files_updated }} ${{ steps.files.outputs.files_created }}'
       run: |
+        str='./' 
         echo "The Following files were changed or created:"
         echo $FILES
-        for FILE in $FILES; do python pyLint.py --path FILE --threshold 10; done
+        for FILE in $FILES; do python pyLint.py --path $str$FILE --threshold 10; done
 
