@@ -47,7 +47,7 @@ jobs:
     - name: Changed Files Exporter
       id: files
       uses: futuratrepadeira/changed-files@v3.0.1
-      with:
+      with: |
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         pattern: '^.*\.(md|py)$'
 
