@@ -10,10 +10,10 @@ on:
       - another
       - again
     
-    paths:
-      - 'Python/**.py'
-      - '**/**.py'
-      - '!.github/**'
+    #paths:
+    #  - 'Python/**.py'
+    #  - '**/**.py'
+    #  - '!.github/**'
 
 
 jobs:
@@ -36,13 +36,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
 
-    - name: Paths Changes Filter
-      uses: dorny/paths-filter@v2.5.1
-      id: changes
-      with:
-        filters: |
-          Python: path
-            - '**/**.py'
+    #- name: Paths Changes Filter
+    #  uses: dorny/paths-filter@v2.5.1
+    #  id: changes
+    #  with:
+    #    filters: |
+    #      Python: path
+    #        - '**/**.py'
               
     - name: Changed Files Exporter
       id: files
@@ -50,6 +50,7 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         pattern: '^.*\.(md|py)$'
+
     - name: Detect Files
       uses: dorny/paths-filter@v2
       id: filter
