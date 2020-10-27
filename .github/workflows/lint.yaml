@@ -2,13 +2,13 @@
 
 name: PyLint Runner
 
-on:
-  pull_request:
-    branches: 
-      - master
-      - smurfer
-      - another
-      - again
+on: [pull_request]
+  #pull_request:
+  #  branches: 
+  #    - master
+  #    - smurfer
+  #    - another
+  #    - again
     
     #paths:
     #  - 'Python/**.py'
@@ -47,7 +47,7 @@ jobs:
     - name: Changed Files Exporter
       id: files
       uses: futuratrepadeira/changed-files@v3.0.1
-      with: |
+      with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         pattern: '^.*\.(md|py)$'
 
