@@ -9,7 +9,7 @@ from pylint.lint import Run
 
 logging.getLogger().setLevel(logging.INFO)
 
-parser = argparse.ArgumentParser(prog="LINT")
+parser = argparse.ArgumentParser(prog="pyLint")
 
 parser.add_argument('-p',
                     '--path',
