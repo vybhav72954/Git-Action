@@ -81,6 +81,5 @@ jobs:
         str='./' 
         echo "The Following files were changed or created:"
         echo $FILES
-        for FILE in $FILES; do FILE=${$str$FILES//[' ']}; 
-        for LFILE in $FILE; do python pyLint.py --path $str$LFILE --threshold 10; done; done
+        for FILE in $FILES; do python pyLint.py --path $FILE --threshold 10; done
 
