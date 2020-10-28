@@ -80,6 +80,7 @@ jobs:
       run: |
         str='./' 
         echo "The Following files were changed or created:"
-        echo $FILES
-        for FILE in $FILES; do python pyLint.py --path $str$FILE --threshold 10; done
+        echo $LFILES
+        for FILES in $LFILES; do FILES=${$str$FILES//[' ']}; 
+        for FILE in $FILES; do python pyLint.py --path $str$FILE --threshold 10; done; done
 
