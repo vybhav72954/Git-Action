@@ -2,18 +2,19 @@
 
 name: PyLint Runner
 
-on: [pull_request]
-  #pull_request:
-  #  branches: 
-  #    - master
-  #    - smurfer
-  #    - another
-  #    - again
+on:
+  pull_request:
+    branches: 
+      - master
+      - smurfer
+      - another
+      - again
     
     #paths:
-    #  - 'Python/**.py'
-    #  - '**/**.py'
-    #  - '!.github/**'
+      - '**.py'
+      - 'Python/**.py'
+      - '**/**.py'
+      - '!.github/**'
 
 
 jobs:
