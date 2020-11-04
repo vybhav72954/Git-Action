@@ -49,7 +49,7 @@ jobs:
       uses: futuratrepadeira/changed-files@v3.2.1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        pattern: '^.*\.(md|py)$'
+        pattern: '^.*\.(py)$'
 
     - name: Detect Files
       uses: dorny/paths-filter@v2
