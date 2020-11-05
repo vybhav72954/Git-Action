@@ -1,11 +1,18 @@
-name: Labeling new issue
+name: "Issue Labeler"
 on:
   issues:
-    types: ['edited']
+    types: ['opened']
+
 jobs:
-  build:
+  triage:
     runs-on: ubuntu-latest
     steps:
+      - uses: github/issue-labeler@v2.2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/issues_labeler.yml
+          enable-versioned-regex: 0
+
       - uses: Renato66/auto-label@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
