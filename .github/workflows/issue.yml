@@ -10,6 +10,6 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           ignore-comments: true
-          labels-synonyms: '{"bug":["error","need fix","not working","bug","Bug","BUG"], "enhancement":["upgrade","feature","enhancement"], "question":["help"], "BASH":["Bash","bash","BASH"], "JavaScript":["JavaScript","JAVASCRIPT","Javascript","javascript","JS","js"], "Python":["Python","PYTHON","python"], "CH20":["CH20"], "SLoP":["SLoP","slop","SLOP"], "Easy":["easy","EASY","Easy"], "Medium":["Medium","medium","MEDIUM"], "Urgent":["urgent","URGENT","Urgent"], "Golang":["Go","GO","Golang","GOLANG"], "Hard":["Hard","hard","HARD"], "documentation":["documentation","Documentation"], "No-Code":["No Code"]}'
+          labels-synonyms: '{"bug":["error", "need fix", "not working", "bug", "Bug", "BUG"], "enhancement":["upgrade", "feature", "enhancement"], "question":["help"], "BASH":["Bash", "bash", "BASH"], "JavaScript":["JavaScript", "JAVASCRIPT", "Javascript", "javascript", "JS", "js"], "Python":["Python", "PYTHON", "python"], "CH20":["CH20"], "SLoP":["SLoP", "slop", "SLOP"], "Easy":["easy", "EASY", "Easy"], "Medium":["Medium", "medium", "MEDIUM"], "Urgent":["urgent", "URGENT", "Urgent"], "Golang":["Go", "GO", "Golang", "GOLANG"], "Hard":["Hard", "hard", "HARD"], "documentation":["documentation", "Documentation"], "No-Code":["No Code"]}'
           labels-not-allowed: '["good first issue"]'
           default-labels: '["Up-For-Grab"]'
