@@ -24,4 +24,4 @@ jobs:
           days_until_unassign: 1
           stale_assignment_label: Up-For-Grab
           assigned_comment: This issue [has been assigned]({{ comment.html_url }}) to {{ comment.user.login }}! It will be unassigned if it isn't closed within {{ totalDays }} days. Best Of Luck!!!!!
-          warning_comment: @{{ assignee.login }}, How are you, this issue hasnt seen any activity in {{ inputs.days_until_warning }} days. We are sorry but in {{ inputs.days_until_unassign }} days it would be unassingned, Best of Luck, You Got this.
+          warning_comment: How are you, this issue hasnt seen any activity in {{ inputs.days_until_warning }} days. We are sorry but in {{ inputs.days_until_unassign }} days it would be unassingned, Best of Luck  @{{ assignee.login }}, You Got this.
