@@ -1,7 +1,7 @@
 name: "Issue Labeler"
 on:
   issues:
-    types: [assigned]
+    types: [edited]
 
 jobs:
   triage:
