@@ -1,7 +1,7 @@
 name: Labeling new issue
 on:
   issues:
-    types: [assigned]
+    types: [edited]
 jobs:
   build:
     runs-on: ubuntu-latest
