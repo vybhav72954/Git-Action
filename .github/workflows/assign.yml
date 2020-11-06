@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign the user or unassign stale assignments
-        uses: vybhav72954/Slash-Assign@v1
+        uses: vybhav72954/Slash-Assign@v1.0
         with:
           required_label: Up-For-Grab
           assigned_label: Assigned
