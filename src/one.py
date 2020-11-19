@@ -2,4 +2,4 @@
 """Simple Hello World Code
 """
 # -*- encoding: utf-8 -*-
-print("Hello World!")
+print("Hello World")
