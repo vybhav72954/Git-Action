@@ -2,8 +2,7 @@
 
 name: PyLint Runner
 
-on:
-  [pull_request]
+on: [pull_request]
   #pull_request:
   #  branches: 
   #    - master
@@ -50,7 +49,7 @@ jobs:
       uses: futuratrepadeira/changed-files@v3.2.1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        pattern: '^.*\.(py)$'
+        pattern: '^.*\.(md|py)$'
 
     - name: Detect Files
       uses: dorny/paths-filter@v2
