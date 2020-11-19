@@ -13,4 +13,5 @@ print("The original list : " + str(test_list))
 res = list(zip(test_list, test_list[1:])) 
   
 # print result 
-print("The consecutive element paired list is : " + str(res)) 
+print("The consecutive element paired list is : " + str(res))
+print("_______________________________")
