@@ -3,13 +3,7 @@
 name: PyLint Runner
 
 on:
-    push:
-      branches:
-        - '*'
-
-    pull_request:
-      branches:
-        - '*'
+  [pull_request]
   #pull_request:
   #  branches: 
   #    - master
