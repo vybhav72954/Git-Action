@@ -5,12 +5,6 @@
 # run arbitrary code.
 extension-pkg-whitelist=
 
-# Specify a score threshold to be exceeded before program exits with error.
-fail-under=3.0
-
-# Add files or directories to the blacklist. They should be base names, not
-# paths.
-ignore=CVS
 
 # Add files or directories matching the regex patterns to the blacklist. The
 # regex matches against base names, not paths.
@@ -22,7 +16,7 @@ ignore-patterns='^.*\.(md|js|go|sh|png|jpg|jpeg)$'
 
 # Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
 # number of processors available to use.
-jobs=1
+jobs=4
 
 # Control the amount of potential inferred values when inferring a single
 # object. This can help the performance when dealing with large functions or
@@ -60,7 +54,11 @@ confidence=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
-disable=print-statement,
+disable=
+C0114, # missing-module-docstring
+C0115, # missing-class-docstring
+C0116, # missing-function-docstring
+R0903  # too-few-public-methodsprint-statement,
         parameter-unpacking,
         unpacking-in-except,
         old-raise-syntax,
@@ -206,7 +204,10 @@ bad-names=foo,
           baz,
           toto,
           tutu,
-          tata
+          tata,
+          t,
+          var
+          
 
 # Bad variable names regexes, separated by a comma. If names match any regex,
 # they will always be refused
