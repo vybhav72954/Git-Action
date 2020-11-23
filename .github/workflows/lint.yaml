@@ -52,7 +52,7 @@ jobs:
         pattern: '^.*\.(md|py)$'
 
     - name: Detect Files
-      uses: dorny/paths-filter@v2
+      uses: dorny/paths-filter@v2.6.0
       id: filter
       with:
         # Enable listing of files matching each filter.
@@ -81,5 +81,5 @@ jobs:
         str='./' 
         echo "The Following files were changed or created:"
         echo $FILES
-        for FILE in $FILES; do python pyLint.py --path $FILE --threshold 10; done
+        for FILE in $FILES; do python pyLint.py --path $FILE --threshold 2; done
 
