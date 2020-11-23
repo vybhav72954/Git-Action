@@ -1,8 +1,6 @@
 name: Assign
 
 on:
-  schedule:
-    - cron: 0 0 * * *
   issue_comment:
     types: [created]
 
@@ -16,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign the user or unassign stale assignments
-        uses: vybhav72954/Slash-Assign@v1.0
+        uses: JasonEtco/slash-assign-action@v0.0.3
         with:
           required_label: Up-For-Grab
           assigned_label: Assigned
