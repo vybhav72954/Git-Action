@@ -23,7 +23,6 @@ MD004:                        # Unordered list style
 MD005: true
 MD009:
   br_spaces: 2
-
 MD007:
   indent: 2                   # Unordered list indentation
 MD013:
@@ -43,3 +42,14 @@ images: true
 links: true
 url: true
 whitespace: true
+atx: true
+blockquote: true
+bullet: true
+emphasis: true
+headers: true
+headings: true
+indentation: true
+ol: true
+ul: true
+spaces: true
+spellings: true
