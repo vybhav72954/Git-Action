@@ -33,7 +33,7 @@ upto 1745 rows
 
 Command Line Argument (No destination path given) - 
 
-![CLI](img/CLI.PNG)
+![CLI]()
 
 ![Output](img/output.PNG)
 
