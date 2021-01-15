@@ -34,6 +34,7 @@ jobs:
     # Load all steps #
     ##################
     steps:
+
       ##########################
       # Checkout the code base #
       ##########################
@@ -56,3 +57,11 @@ jobs:
           LINTER_RULES_PATH: /.github/linters
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdown-lint.yml
+
+      ########################################
+      # Run Spell Checker against code base #
+      ########################################
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.5.0
+        with:
+          config_path: linters/.spellcheck.yml
