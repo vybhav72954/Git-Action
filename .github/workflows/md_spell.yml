@@ -2,7 +2,7 @@
 ########################################
 # Run Spell Checker against code base #
 ########################################
-name: Spellcheck Action
+name: Check Spellings
 on: push
 jobs:
   build:

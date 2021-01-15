@@ -5,14 +5,14 @@ Hello fellow contributors and Open-Source enthusiasts.
 Welcome to Rotten-Scripts :octocat:
 
 This Styling & Troubleshooting guide wil help you to get rid of errors and warnings that might have popped up during the
-mandatory **GitHub Checks**
+mandatory **GitHub Checks**.
 
 A list of currently working GitHub Checks can be found [here](../workflows).
 
 In terms of style checking we have these actions -
 
 1. md_lint
-2. spellcheck
+2. md_spell
 3. md_link
 4. py_lint
 5. Deepsource
@@ -25,12 +25,12 @@ Standarads`.
 
 In this Troubleshoot guide, we will help you to sort out all the errors related to. 
 
--
--
--
+- Lint Code Base i.e. [md_lint](../workflows/md_lint.yml)
+- Check Spellings i.e. [md_spell](../workflows/md_spell.yml)
+- Check Markdown links i.e. [md_link](../workflows/md_link.yml)
 
 
-## MD LINT ACTION
+## Lint Code Base
 
 All the Possible Error Codes are mentioned down below. Match your error-code and click on the Link.
 
@@ -53,7 +53,7 @@ This will take you to [markdownlint](https://github.com/DavidAnson/markdownlint)
 * **[MD022](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md022)** *blanks-around-headings/blanks-around-headers* - Headings should be surrounded by blank lines
 * **[MD023](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md023)** *heading-start-left/header-start-left* - Headings must start at the beginning of the line
 * **[MD024](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md024)** *no-duplicate-heading/no-duplicate-header* - Multiple headings with the same content
-* **[MD025](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md025)** *single-title/single-h1* - Multiple top level headings in the same https://github.com/DavidAnson/markdownlint/blob/main/document
+* **[MD025](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md025)** *single-title/single-h1* - Multiple top level headings in the same file
 * **[MD026](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md026)** *no-trailing-punctuation* - Trailing punctuation in heading
 * **[MD027](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md027)** *no-multiple-space-blockquote* - Multiple spaces after blockquote symbol
 * **[MD028](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md028)** *no-blanks-blockquote* - Blank line inside blockquote
@@ -76,7 +76,7 @@ This will take you to [markdownlint](https://github.com/DavidAnson/markdownlint)
 * **[MD047](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md047)** *single-trailing-newline* - Files should end with a single newline character
 * **[MD048](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md048)** *code-fence-style* - Code fence style
 
-## Spellcheck
+## Check Spellings
 
 This action lists out all the possible spelling mistakes in your `README.md` file. It is strongly suggested that you spellcheck all your files before uploading anything to maintain the aesthetics of the Repo.
 
@@ -88,10 +88,19 @@ For more help Read our [STYLING GUIDELINES](../../README.md).
 
 If you believe that some words are wrongly pointed out and/or you want your name to be ignored by the Action.
 
-It is recommended that you add the word to the [wordlist](.wordlist.txt). Kindly note that any wrong edit can cause breaking changes.
+It is recommended that you add the word to the [wordlist](.wordlist.txt). 
 
-Hence follow the proper format __Remember to add a New Line after every word__. Commit this file in the same branch which you opened for the PR, so that in future the unnecessary words are ignored.
-## Link Check
+Kindly note that any wrong edit can cause breaking changes.
+
+Steps to Consider
+- Use `git checkout` to navigate to the branch in your remote which was used to open the PR.
+- Add the required words in [wordlist](.wordlist.txt) **in your branch**.
+- Remember to add a New Line after every word.
+- `git add .`
+- `git commit -m "Added Words in Wordlist"`
+- `git push -u origin <branch>`
+
+## Check Markdown links
 
 This action checks for dead links/broken links. 
 
