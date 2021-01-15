@@ -33,9 +33,9 @@ upto 1745 rows
 
 Command Line Argument (No destination path given) - 
 
-![CLI]()
+![CLI](img/CLI.PNG)
 
-![Output](img/output.PNG)
+![Output]()
 
 With Destination Path - 
 
@@ -45,5 +45,5 @@ With Destination Path -
 
 ## Author(s)
 
-Made by [Vybhav Chaturvedi](https://www.linkedin.com/in/vybhav-chaturvedi-0ba82614a/)
-
+Made by [Vybhav Chaturvedi]()
+Made by [Vybhav Chaturvedi](
