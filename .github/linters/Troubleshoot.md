@@ -1,8 +1,6 @@
 # Troubleshoot
 
-Hello fellow contributors and Open-Source enthusiasts.
-
-Welcome to Rotten-Scripts :octocat:
+Hello fellow contributors and Open-Source enthusiasts. Welcome to **Rotten-Scripts** :octocat:
 
 This Styling & Troubleshooting guide wil help you to get rid of errors and warnings that might have popped up during the
 mandatory **GitHub Checks**.
@@ -25,9 +23,9 @@ Standarads`.
 
 In this Troubleshoot guide, we will help you to sort out all the errors related to. 
 
-- Lint Code Base i.e. [md_lint](../workflows/md_lint.yml)
-- Check Spellings i.e. [md_spell](../workflows/md_spell.yml)
-- Check Markdown links i.e. [md_link](../workflows/md_link.yml)
+- **Lint Code Base** i.e. [md_lint](../workflows/md_lint.yml)
+- **Check Spellings** i.e. [md_spell](../workflows/md_spell.yml)
+- **Check Markdown** links i.e. [md_link](../workflows/md_link.yml)
 
 
 ## Lint Code Base
@@ -78,9 +76,7 @@ This will take you to [markdownlint](https://github.com/DavidAnson/markdownlint)
 
 ## Check Spellings
 
-This action lists out all the possible spelling mistakes in your `README.md` file. It is strongly suggested that you spellcheck all your files before uploading anything to maintain the aesthetics of the Repo.
-
-If there are spelling mistakes in your file, the action will fail, you can check the incorrect spelling as well. 
+This action lists out all the possible spelling mistakes in your `README.md` file. It is strongly suggested that you spellcheck all your files before uploading anything to maintain the aesthetics of the Repo. If there are spelling mistakes in your file, the action will fail, you can check the incorrect spelling as well. 
 
 It is strongly advised to correct those spellings or the PR might be outright rejected.
 
