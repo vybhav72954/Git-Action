@@ -74,13 +74,13 @@ This will take you to [markdownlint](https://github.com/DavidAnson/markdownlint)
 
 ## Check Spellings
 
-This action lists out all the possible spelling mistakes in your `README.md` file. It is strongly suggested that you spellcheck all your files before uploading anything to maintain the aesthetics of the Repo. If there are spelling mistakes in your file, the action will fail, you can check the incorrect spelling as well. 
+This action lists out all the possible spelling mistakes in your `README.md` file. It is strongly suggested that you spellcheck all your files before uploading anything to maintain the aesthetics of the Repo. If there are spelling mistakes in your file, the action will fail, you can check the incorrect spelling as well.
 
 It is strongly advised to correct those spellings or the PR might be outright rejected. For more help Read our [STYLING GUIDELINES](../../README.md).
 
 If you believe that some words are wrongly pointed out and/or you want your name to be ignored by the Action.
 
-It is recommended that you add the word to the [wordlist](.wordlist.txt). 
+It is recommended that you add the word to the [wordlist](.wordlist.txt).
 
 Kindly note that any wrong edit can cause breaking changes.
 
@@ -95,6 +95,6 @@ Steps to Consider
 
 ## Check Markdown links
 
-This action checks for dead links/broken links. 
+This action checks for dead links/broken links.
 
 Kindly ensure that all the links are working before you finalize your Pull Request.
