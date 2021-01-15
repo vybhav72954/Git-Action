@@ -58,11 +58,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdown-lint.yml
           DISABLE_ERRORS: true
-
-      ########################################
-      # Run Spell Checker against code base #
-      ########################################
-      - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.5.0
-        with:
-          config_path: .spellcheck.yml
