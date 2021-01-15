@@ -57,6 +57,7 @@ jobs:
           LINTER_RULES_PATH: /.github/linters
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MARKDOWN_CONFIG_FILE: .markdown-lint.yml
+          DISABLE_ERRORS: true
 
       ########################################
       # Run Spell Checker against code base #
