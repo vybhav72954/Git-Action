@@ -9,5 +9,5 @@ jobs:
     - uses: actions/first-interaction@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: 'Hi thanks for creating your first issue at Rotten Scripts, hope you followed the guidelines.'
+        issue-message: 'Hi thanks for creating your first issue at Rotten Scripts, hope you followed the guidelines. In case there are errors in actions please check [Troubleshot](../linters/Troubleshoot.md)'
         pr-message: 'Congratulations!! for making your first PR at Rotten Scripts, our mentors will review it soon. In case there are errors in actions please check [Troubleshot](../linters/Troubleshoot.md)'
