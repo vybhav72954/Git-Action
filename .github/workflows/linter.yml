@@ -63,7 +63,6 @@ jobs:
       # Run Spell Checker against code base #
       ########################################
       - name: Spellcheck
-        - uses: actions/checkout@master
-        - uses: rojopolis/spellcheck-github-actions@0.5.0
-          with:
-            config_path: .spellcheck.yml
+        uses: rojopolis/spellcheck-github-actions@0.5.0
+        with:
+          config_path: .spellcheck.yml
