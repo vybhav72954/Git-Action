@@ -1,8 +1,7 @@
-name: PRlabeler
+name: PR_Labeler
 on:
   pull_request:
     types: [opened, closed, reopened]
-    branches: [master]
 
 jobs:
   first-job:
@@ -13,5 +12,5 @@ jobs:
       - name: Run Action
         uses: anushkrishnav/PR-Line-Labeler@main
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          token: '${{ secrets.GITHUB_TOKEN }}'
           repo: vybhav72954/Git-Action
