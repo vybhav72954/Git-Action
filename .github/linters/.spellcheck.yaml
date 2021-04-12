@@ -1,22 +1,19 @@
-matrix:
 
+matrix:
 - name: Markdown
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
   aspell:
     lang: en
   dictionary:
     wordlists:
-    - .github/linters/.wordlist.txt
+    - wordlist.txt
     encoding: utf-8
   pipeline:
   - pyspelling.filters.markdown:
-  - pyspelling.filters.url:
   - pyspelling.filters.html:
       comments: false
       ignores:
-        - code
-        - pre
-        - ul
-        - li
-  sources:
-    - '**/*.md'
-  default_encoding: utf-8
+      - code
+      - pre
