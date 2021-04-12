@@ -37,7 +37,4 @@ jobs:
       with:
         config_path: .github/linters/.spellcheck.yml
         source_files: ../*.md
-
-
-
-
+        task_name: Markdown
