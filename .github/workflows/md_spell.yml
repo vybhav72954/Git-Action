@@ -35,4 +35,5 @@ jobs:
     - uses: rojopolis/spellcheck-github-actions@master
       name: Check Spelling
       with:
-        config_path: .github/linters/.spellcheck.yml
+        source_files: ../*.md
+        task_name: Markdown
