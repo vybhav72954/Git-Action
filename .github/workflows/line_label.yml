@@ -1,0 +1,17 @@
+name: PRlabeler
+on:
+  pull_request:
+    types: [opened, closed, reopened]
+    branches: [master]
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+      - name: Run Action
+        uses: anushkrishnav/PR-Line-Labeler@main
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo: vybhav72954/Git-Action
